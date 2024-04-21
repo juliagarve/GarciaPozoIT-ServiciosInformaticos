@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GarciaPozo IT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Arial", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right">GarciaPozo IT</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="https://192.168.1.89/imagenes/foto_perfil.jpg" class="w3-circle w3-margin-right" style="width:46px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Bienvenido, <strong>[% nombre_usuario %]</strong></span><br>
+	<form action="cerrarSesion.pl" method="post">
+             <button type="submit" class="w3-bar-item w3-button">Salir  <i class="fa fa-power-off"></i></button>
+          </form>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Menú</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-tag fa-fw"></i>  Servicios</a>
+    <a href="ejecutarObtenerEstadoServicios.pl" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Estado</a>
+    <a href="verPerfil.pl" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Perfil</a>
+    <a href="contacto.pl" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw"></i>  Contacto</a>
+    <a href="ayuda.pl" class="w3-bar-item w3-button w3-padding"><i class="fa fa-info fa-fw"></i>  Ayuda</a>
+  </div>
+</nav>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-tag fa-fw"></i> Servicios</b></h5>
+  </header>
+
+  <div class="w3-container w3-row-padding w3-margin-bottom">
+    <h5>Servicios contratados</h5>
+    <ul class="w3-ul w3-card-4 w3-white">
+[% correo_si %]
+[% blog_si %]
+[% web_si %]
+    </ul>
+  </div>
+  <hr>
+
+  <div class="w3-container w3-row-padding w3-margin-bottom">
+    <h5>Servicios no contratados</h5>
+    <ul class="w3-ul w3-card-4 w3-white">
+[% correo_no %]
+[% blog_no %]
+[% web_no %]
+    </ul>
+  </div>
+  <hr>
+
+  <!-- Pop-up confirmar contrato correo -->
+<div class="modal fade" id="confirmacionContratarCorreo" tabindex="-1" role="dialog" aria-labelledby="confirmacionContratarCorreo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirma el contrato del correo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Está seguro de que quiere contratar el servicio de correo?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+	  <form action="contratarCorreo.pl" method="post">
+             <button type="submit" class="btn btn-primary">Sí</button>
+          </form>
+	</div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Pop-up confirmar contrato blog -->
+<div class="modal fade" id="confirmacionContratarBlog" tabindex="-1" role="dialog" aria-labelledby="confirmacionContratarCorreo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirma el contrato del blog</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Está seguro de que quiere contratar el servicio de blog?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <form action="contratarBlog.pl" method="post">
+             <button type="submit" class="btn btn-primary">Sí</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Pop-up confirmar contrato correo -->
+<div class="modal fade" id="confirmacionContratarWEB" tabindex="-1" role="dialog" aria-labelledby="confirmacionContratarCorreo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirma el contrato de páginas WEB</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Está seguro de que quiere contratar el servicio de albergue de páginas WEB?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+	  <form action="contratarWeb.pl" method="post">
+             <button type="submit" class="btn btn-primary">Sí</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up confirmar eliminar correo -->
+<div class="modal fade" id="confirmacionEliminarCorreo" tabindex="-1" role="dialog" aria-labelledby="confirmacionEliminarCorreo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirma la finalización del contrato del correo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Está seguro de que quiere finalizar su contrato del servicio de correo? Sus datos se perderán.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <form action="finalizarCorreo.pl" method="post">
+             <button type="submit" class="btn btn-primary">Sí</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up confirmar eliminar blog -->
+<div class="modal fade" id="confirmacionEliminarBlog" tabindex="-1" role="dialog" aria-labelledby="confirmacionEliminarBlog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirma la finalización del contrato del blog</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Está seguro de que quiere finalizar su contrato del servicio de blog? Sus datos se perderán.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+	  <form action="finalizarBlog.pl" method="post">
+             <button type="submit" class="btn btn-primary">Sí</button>
+          </form>
+	</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up confirmar eliminar web -->
+<div class="modal fade" id="confirmacionEliminarWEB" tabindex="-1" role="dialog" aria-labelledby="confirmacionEliminarWeb" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirma la finalización del contrato de páginas WEB</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Está seguro de que quiere finalizar su contrato de albergue de páginas WEB? Sus datos se perderán.
+        </div>
+        <div class="modal-footer">
+	  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+	  <form action="finalizarWeb.pl" method="post">
+             <button type="submit" class="btn btn-primary">Sí</button>
+          </form>
+	</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- End page content -->
+</div>
+</body>
+</html>

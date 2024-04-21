@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GarciaPozo IT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Arial", sans-serif
+        }
+    </style>
+</head>
+
+<body class="w3-light-grey">
+
+    <!-- Top container -->
+    <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey"
+            onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+        <span class="w3-bar-item w3-right">GarciaPozo IT</span>
+    </div>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+        <div class="w3-container w3-row">
+            <div class="w3-col s4">
+                <img src="https://192.168.1.89/imagenes/foto_perfil.jpg" class="w3-circle w3-margin-right"
+                    style="width:46px">
+            </div>
+            <div class="w3-col s8 w3-bar">
+                <span>Bienvenido, <strong>[% nombre_usuario %]</strong></span><br>
+                <form action="cerrarSesion.pl" method="post">
+                    <button type="submit" class="w3-bar-item w3-button">Salir <i class="fa fa-power-off"></i></button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="w3-container">
+            <h5>Menú</h5>
+        </div>
+        <div class="w3-bar-block">
+            <a href="serviciosUsuario.pl" class="w3-bar-item w3-button w3-padding"><i class="fa fa-tag fa-fw"></i> 
+                Servicios</a>
+            <a href="ejecutarObtenerEstadoServicios.pl" class="w3-bar-item w3-button w3-padding"><i
+                    class="fa fa-eye fa-fw"></i>  Estado</a>
+            <a href="verPerfil.pl" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Perfil</a>
+            <a href="contacto.pl" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw"></i>  Contacto</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-info fa-fw"></i>  Ayuda</a>
+        </div>
+    </nav>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+        <!-- Header -->
+        <header class="w3-container" style="padding-top:22px">
+            <h5><b><i class="fa fa-info fa-fw"></i> Ayuda</b></h5>
+        </header>
+
+        <div class="w3-container">
+            <h5>¿Como contratar y finalizar los servicios que contrato?</h5>
+            <p>Seleccionando en la pestaña de mis servicios el botón contratar o finalizar respectivamente.</p>
+            <h5>¿Cuándo se activan los servicios que contrato?</h5>
+            <p>Nada más contratar un servicio, este servicio está disponible para usted.</p>
+            <h5>¿Cuál es mi dirección de correo si contrato el servicio de correo?</h5>
+            <p>tu_usuario@garciapozoit.com</p>
+            <h5>¿Como utilizo mi servicio de correo contratado?</h5>
+            <p>Puede utilizar el cliente POP Mozilla Tunderbird para manejar su servicio de correo.</p>
+            <h5>¿Cómo utilizar mi servicio de blog?</h5>
+            <p>Al contratar el servicio de blog, podrá acceder a la sección de blog seleccionando la palabra blog en la
+                pestaña mis servicios. Esta acción le redirigirá a una pantalla de inicio de sesión. Sus credenciales
+                son su correo o usuario y la contraseña de nuestro sistema. La herramienta de blog utiliza es Wordpress.
+                Para más información sobre su uso redirigase a <a href="https://wordpress.com/es/support/"
+                    target="_blank">Wordpress.</a></p>
+            <h5>¿Cómo utilizar mi servicio de albergue de páginas WEB?</h5>
+            <p>Para subir páginas web debe acceder a nuestro servidor ejecutando desde la terminal el siguiente comando:
+                "sftp tu_usuario@192.168.1.89". De esta forma accederá a nuestra sección de tus páginas WEB. Todas
+                aquellas páginas WEB que quiera que alberguemos las debe colocar en la carpeta
+                meter_aqui_tus_paginas_webs. Para subir un archivo basta con ejecutar el comando "put ruta_archivo ." . A partir de ese momento estarán disponibles accediendo desde la url:
+                https:/192.168.1.89/paginasWebUsuarios/webs_"tu_usuario"/meter_aqui_tus_paginas_webs/"nombre_de_tu_pagina".html</p>
+            <h5>¿Cómo modificar mi perfil?</h5>
+            <p>Acceda a la pestaña de perfil desde nuestro menú. Seleccione el botón de modificar perfil y ahí podrá modificar todos sus datos excepto su nombre de usuario. Para guardar sus cambios en nuestra base de datos seleccione la opción "Guardar".</p>
+            <h5>¿Cómo salir del sistema?</h5>
+            <p>En la esquina superior izquierda, hay un botón de salir. Basta con presionarlo para salir de nuestro sistema.</p>
+            <h5>¿Cómo dar de baja mi cuenta del sistema?</h5>
+            <p>Acceda a la pestaña de perfil desde nuestro menú. Seleccione el botón de eliminar perfil y confirme su selección.</p>
+        </div>
+        <hr>
+        <!-- End page content -->
+    </div>
+</body>
+
+</html>

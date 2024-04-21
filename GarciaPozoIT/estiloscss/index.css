@@ -1,0 +1,144 @@
+﻿nav {
+    background-color: #000000;
+    padding: 12.5px;
+    text-align: center;
+    text-decoration-color: #f8f9fa;
+    position: fixed;
+    width: 100%;
+}
+
+*{
+  font-family: Arial !important;
+} 
+
+a {
+    color: #ced4da;
+    text-decoration: none;
+}
+
+nav a:hover, p > a:hover {
+    border-bottom: 1px solid #f8f9fa;
+    color: #f8f9fa;
+}
+
+#Quienes {
+    padding-top: 30px;
+}
+
+body {
+    background: #f1f1f1;
+    margin: 0;
+}
+
+.section {
+    background-color: #e6e6e6;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+p {
+    color: #495057;
+}
+
+#Productos {
+    justify-content: center;
+}
+
+.listado_productos {
+    display: flex;
+    grid-gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.producto {
+    width: 29%;
+    background-color: #f8f9fa;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .producto > * {
+        margin: 10px;
+    }
+
+.media {
+    height: 200px;
+    width: 100%;
+    align-self: center;
+}
+
+.section_title {
+    color: #212529;
+    font-weight: 600;
+    grid-area: area;
+    padding-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section_text {
+    grid-area: area2;
+}
+
+.section, .información_contacto {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#Contacto {
+    background-color: #212529;
+    color: #ced4da;
+    list-style-type:none;
+    margin: 0;
+}
+
+#Contacto .section_title {
+    padding-top: 30px;
+    color: #f8f9fa;
+}
+
+#Contacto .información_contacto {
+    color: #f8f9fa;
+    text-align:center;
+}
+
+h2.main {
+    color: #212529;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.producto_title {
+    color: #212529;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+.media {
+    height:80px;
+    width: 20%;
+}
+
+p > a {
+    color: #212529;
+    font-weight: bold;
+}
+
+.to_top {
+    text-align: right;
+}
+
+
+.to_top a {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url("flecha_arriba2.png");
+    background-size: 100% 100%;
+    text-indent: -9999px;
+}

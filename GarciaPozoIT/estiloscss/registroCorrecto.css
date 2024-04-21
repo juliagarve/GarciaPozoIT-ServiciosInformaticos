@@ -1,0 +1,44 @@
+nav {
+    background-color: #000000;
+    padding: 9.5px;
+    text-align: center;
+    text-decoration-color: #f8f9fa;
+    position: fixed;
+    width: 100%;
+}
+
+a {
+    color: #ced4da !important;
+    text-decoration: none !important;
+}
+
+nav a:hover, p > a:hover {
+    border-bottom: 1px solid #f8f9fa !important;
+    color: #f8f9fa !important;
+}
+
+
+body{
+    margin-top:20px;
+}
+
+html {
+    background-color: #f1f1f1;
+}
+
+.row{
+    text-align: center;
+}
+
+
+.card-box .card-drop {
+  color: #f1f1f1;
+  font-size: 20px;
+  line-height: 1px;
+  padding: 0px 5px;
+  display: inline-block;
+}
+
+.text-muted {
+    color: #9a9da0 !important;
+}

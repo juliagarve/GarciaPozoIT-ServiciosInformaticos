@@ -1,0 +1,84 @@
+﻿html, body {
+    height: 100%;
+}
+
+*{
+  font-family: Arial !important;
+} 
+
+nav {
+    background-color: #000000;
+    padding: 9.5px;
+    text-align: center;
+    text-decoration-color: #f8f9fa;
+    position: fixed;
+    width: 100%;
+}
+
+a {
+    color: #ced4da;
+    text-decoration: none;
+}
+
+nav a:hover{
+    border-bottom: 1px solid #f8f9fa;
+    color: #f8f9fa;
+}
+
+.form-group a {
+    float:right;
+    font-size:12px;
+    color:#6c757d;
+}
+
+.form-group a:hover {
+    border-bottom: 1px solid #212529;
+    color: #212529;
+}
+
+.global-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+}
+
+form {
+    padding-top: 20px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.card-title {
+    font-weight: 300;
+}
+
+.btn {
+    background-color: #212529;
+    font-size: 14px;
+    margin-top: 20px;
+    border:0;
+}
+
+.btn:hover, .btn:focus, btn:active {
+    background-color: #6c757d !important; 
+    border: 0;
+}
+
+
+.login-form {
+    background-color: #FFFFFF;
+    width: 330px;
+    margin: 20px;
+}
+
+.form-group{
+    margin-top:10px;
+}
+
+.alert {
+    margin-bottom: -30px;
+    font-size: 13px;
+    margin-top: 20px;
+}
